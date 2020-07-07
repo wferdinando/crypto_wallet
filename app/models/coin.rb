@@ -1,2 +1,1 @@
-class Coin < ApplicationRecord
-end
+class Coin < ApplicationRecord; end

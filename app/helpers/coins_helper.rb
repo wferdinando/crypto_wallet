@@ -1,2 +1,1 @@
-module CoinsHelper
-end
+module CoinsHelper; end
