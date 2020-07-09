@@ -10,8 +10,9 @@ namespace :dev do
      
       show_spinner("Realizando Migrações...") {%x(rails db:migrate)}
       
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_types)
+      %x(rails dev:add_coins)
+     
 
     else
       puts "Você não está em ambiente de desenvolvimento!"
@@ -26,29 +27,36 @@ namespace :dev do
         {
           description: 'Bitcoin',
           acronym: 'BTC',
-          url_image:'https://toppng.com/uploads/preview/bitcoin-png-bitcoin-logo-transparent-background-11562933997uxok6gcqjp.png'
+          url_image:'https://toppng.com/uploads/preview/bitcoin-png-bitcoin-logo-transparent-background-11562933997uxok6gcqjp.png',
+          mining_type: MiningType.find_by(acronym: 'PoW')
         },
 
         {
           description: 'Ethereum',
           acronym: 'ETH',
-          url_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png/600px-ETHEREUM-YOUTUBE-PROFILE-PIC.png'
+          url_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png/600px-ETHEREUM-YOUTUBE-PROFILE-PIC.png',
+          mining_type: MiningType.all.sample
         },
 
         {
           description: 'Dash',
           acronym: 'DASH',
-          url_image:'https://www.zenithincome.com/uploads/currencies/icon/156518530383Dash-D-white_on_blue_circle.png'
+          url_image:'https://www.zenithincome.com/uploads/currencies/icon/156518530383Dash-D-white_on_blue_circle.png',
+          mining_type: MiningType.all.sample
         },
+       
         {
           description: 'Iota',
           acronym: 'IOT',
-          url_image:'https://faviconer.net/preloaders/871/Iota%20logo%20spinning.jpg'
+          url_image:'https://faviconer.net/preloaders/871/Iota%20logo%20spinning.jpg',
+          mining_type: MiningType.all.sample
         },
+        
         {
           description: 'ZCash',
           acronym: 'ZEC',
-          url_image:'https://z.cash/wp-content/uploads/2020/03/zcash-icon-fullcolor.png'
+          url_image:'https://z.cash/wp-content/uploads/2020/03/zcash-icon-fullcolor.png',
+          mining_type: MiningType.all.sample
         }
       ]
 
