@@ -1,7 +1,11 @@
 <h1>Seja Bem-Vindo!</h1>
+<p>Idioma do sistema: <b><%= t('actual_locale') %></p></b>
+<p><%= I18n.t('hello') %></p>
+
+
 <h3><%= nome_aplicacao %></h3> 
 
-<p><b>Data:</b> <%= data_br(Date.today) %></p>
+<p><b>Data:</b> <%= I18n.l(Date.today) %></p>
 
 <%= render "menu" %>
 
