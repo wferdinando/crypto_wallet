@@ -1,3 +1,5 @@
+<p><%= link_to 'Português', root_path(locale: 'pt-BR') %></p>
+<p><%= link_to 'English', root_path(locale: 'en') %></p>
 <h1>Seja Bem-Vindo!</h1>
 <p>Idioma do sistema: <b><%= t('actual_locale') %></p></b>
 <p><%= I18n.t('hello') %></p>
@@ -10,3 +12,4 @@
 <%= render "menu" %>
 
 <p><%= @nome %></p>
+
