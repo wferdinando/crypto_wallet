@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <p id="notice"><%= notice %></p>
+    
+    <h1><%= t('showing.mining_type') %></h1>
+    <br>
+    <form>
+      <div class="form-group">
+        <%= label_tag nil, @mining_type.class.human_attribute_name(:description) %>
+        <%= text_field_tag nil, @mining_type.description, class:"form-control", disabled:true %>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mining_type.description %>
-</p>
+      <div class="form-group">
+        <%= label_tag nil, @mining_type.class.human_attribute_name(:acronym) %>
+        <%= text_field_tag nil, @mining_type.acronym, class:"form-control", disabled:true %>
+      </div>
+    </form>
+    <br>
+    <%= link_to t('links.edit'), edit_mining_type_path(@mining_type), class:"btn btn-info" %> |
+    <%= link_to t('links.back'), mining_types_path, class:"btn btn-secondary" %>
+  </div>
+</div>
 
-<p>
-  <strong>Acronym:</strong>
-  <%= @mining_type.acronym %>
-</p>
-
-<%= link_to 'Edit', edit_mining_type_path(@mining_type) %> |
-<%= link_to 'Back', mining_types_path %>
